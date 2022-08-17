@@ -1,4 +1,4 @@
-package ru.netology.springbootrest.AuthorizationController;
+package ru.netology.springbootrest.authorizationController;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -6,16 +6,20 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.netology.springbootrest.Authorities.Authorities;
-import ru.netology.springbootrest.AuthorizationService.AuthorizationService;
-import ru.netology.springbootrest.InvalidCredentials.InvalidCredentials;
-import ru.netology.springbootrest.UnauthorizedUser.UnauthorizedUser;
+import ru.netology.springbootrest.enumeration.Authorities;
+import ru.netology.springbootrest.authorizationService.AuthorizationService;
+import ru.netology.springbootrest.exception.InvalidCredentials;
+import ru.netology.springbootrest.exception.UnauthorizedUser;
 
 import java.util.List;
 
 @RestController
 public class AuthorizationController {
     AuthorizationService service;
+
+    public AuthorizationController(AuthorizationService service) {
+        this.service = service;
+    }
 
     @GetMapping("/authorize")
     public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {

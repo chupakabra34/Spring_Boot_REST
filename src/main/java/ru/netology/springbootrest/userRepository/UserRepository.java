@@ -1,7 +1,7 @@
-package ru.netology.springbootrest.UserRepository;
+package ru.netology.springbootrest.userRepository;
 
 import org.springframework.stereotype.Repository;
-import ru.netology.springbootrest.Authorities.Authorities;
+import ru.netology.springbootrest.enumeration.Authorities;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package ru.netology.springbootrest.InvalidCredentials;
+package ru.netology.springbootrest.exception;
 
 public class InvalidCredentials extends RuntimeException {
     public InvalidCredentials(String msg) {

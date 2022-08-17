@@ -1,4 +1,4 @@
-package ru.netology.springbootrest.UnauthorizedUser;
+package ru.netology.springbootrest.exception;
 
 public class UnauthorizedUser extends RuntimeException {
     public UnauthorizedUser(String msg) {

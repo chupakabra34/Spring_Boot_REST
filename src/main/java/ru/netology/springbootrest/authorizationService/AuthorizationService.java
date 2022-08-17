@@ -1,14 +1,18 @@
-package ru.netology.springbootrest.AuthorizationService;
+package ru.netology.springbootrest.authorizationService;
 
-import ru.netology.springbootrest.Authorities.Authorities;
-import ru.netology.springbootrest.InvalidCredentials.InvalidCredentials;
-import ru.netology.springbootrest.UnauthorizedUser.UnauthorizedUser;
-import ru.netology.springbootrest.UserRepository.UserRepository;
+import ru.netology.springbootrest.enumeration.Authorities;
+import ru.netology.springbootrest.exception.InvalidCredentials;
+import ru.netology.springbootrest.exception.UnauthorizedUser;
+import ru.netology.springbootrest.userRepository.UserRepository;
 
 import java.util.List;
 
 public class AuthorizationService {
     UserRepository userRepository;
+
+    public AuthorizationService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {
