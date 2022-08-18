@@ -9,11 +9,6 @@ import ru.netology.springbootrest.userRepository.UserRepository;
 public class AuthorizationConfiguration {
 
     @Bean
-    public UserRepository userRepository() {
-        return new UserRepository();
-    }
-
-    @Bean
     public AuthorizationService service(UserRepository userRepository) {
         return new AuthorizationService(userRepository);
     }
